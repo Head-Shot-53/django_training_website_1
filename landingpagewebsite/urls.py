@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import first_page, second_page
+# from .views import first_page, second_page
+from crm import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('first', first_page),
-    path('second', second_page)
+    # path('first', first_page),
+    # path('second', second_page),
+    path('table_page',views.table_page)
 ]

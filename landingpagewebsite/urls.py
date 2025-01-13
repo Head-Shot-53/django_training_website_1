@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('first', first_page),
     # path('second', second_page),
-    path('table_page',views.table_page)
+    path('home/',views.table_page),
+    path('thanks/',views.thanks_page, name='thanks_page')
+
 ]

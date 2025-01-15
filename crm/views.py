@@ -7,8 +7,8 @@ def table_page(request):
 
 
 def thanks_page(request):
-    name = request.GET['name']
-    phone = request.GET['phone']
+    name = request.POST['name']
+    phone = request.POST['phone']
     element = Order(order_name = name, order_phone = phone)
     element.save()
     return render(request, './thanks_page.html', { 'name': name,

@@ -1,9 +1,12 @@
 from django.shortcuts import render
+from .forms import OrderForm
 from .models import Order
 
 def table_page(request):
     object_list = Order.objects.all()
-    return render(request, './index.html', {'object_list' : object_list})
+    form = OrderForm()
+    return render(request, './index.html', {'object_list' : object_list,
+                                            'form':form})
 
 
 def thanks_page(request):

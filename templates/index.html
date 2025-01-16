@@ -16,10 +16,8 @@
 
 <form action="{% url 'thanks_page' %}" method="POST">
     {% csrf_token %}
-    <label>Ім'я</label>
-    <input name="name">
-    <label>Телефон</label>
-    <input name="phone">
+    {{ form.as_p }}
+    
     <button type="submit">Відправити</button>
 </form>
 

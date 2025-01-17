@@ -1,58 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>  
+{% block content %}
+<h1>Данні з індексу</h1>
 
-<form action="{% url 'thanks_page' %}" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    
-    <button type="submit">Відправити</button>
-</form>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-{% if object_list %}
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Ім'я</th>
-        <th>Дата</th>
-        <th>Номер</th>
-    </tr>
-{% for obj in object_list %}
-    <tr>
-        <th>{{ obj.id }}</th>
-        <th>{{ obj.order_name }}</th>
-        <th>{{ obl.order_dt }}</th>
-        <th>{{ obj.order_phone }}</th>
-    </tr>
-{% endfor %}
-</table>
-{% else %}
-<h1>Замовлень немає</h1>
-{% endif %}
-
-</body>
-</html>
+{% include 'index_old.html' %}
+{% endblock %}
